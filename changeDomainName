@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo su
+
+echo "enter the domain name you want"
+
+read domainName
+
+
+hostnamectl set-hostname --static $domainName

@@ -1,0 +1,88 @@
+USE OF FUNCTIONS IN BASH
+========================
+
+In Bash Scripting, the use of functions is a great way to reuse code. We'll learn how they work and what you can achieve with them.
+
+A function could be thought as a script within a script that can be invoked multiple times on the script
+
+creating a function is easy
+
+function_name () {
+<commands>
+}
+
+or 
+
+function function_name {
+<commands>
+}
+
+points to note
+--------------
+
+- You never put anything inside the brackets, brackets are just for decoration
+
+- Function definition comes before function declaration
+
+
+func_demo.sh file script
+
+    #!/bin/bash
+    # Basic function
+    myfunc () {
+    echo Hello I am inside a function
+    }
+    myfunc
+    myfunc
+
+
+Terminal
+
+root@evans ./func_demo.sh
+Hello I am inside a function
+Hello I am inside a function
+
+
+Return Values
+-------------
+It is way to send data back to the original calling location
+Bash functions don't allow us to do this
+They allow us to set a return status
+return keyword indicates a return status
+
+
+return_status.sh script
+
+    #!/bin/bash
+    # Setting a return status for a function
+    print_something () {
+    echo Hello $1
+    return 5
+    }
+    print_something Mars
+    print_something Jupiter
+    echo The previous function has a return value of $?
+
+Terminal
+
+root@evans: ./return_status.sh
+Hello Mars
+Hello Jupiter
+The previous function has a return value of 5
+
+ Command_Substitution_Method
+----------------------------
+
+return_hack.sh
+
+    #!/bin/bash
+    # Setting a return value to a function
+    lines_in_file () {
+    cat $1 | wc -l
+    }
+    num_lines=$( lines_in_file $1 )
+    echo The file $1 has $num_lines lines in it.
+
+
+
+
