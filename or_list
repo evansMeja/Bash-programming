@@ -1,0 +1,17 @@
+#!/bin/bash
+# rm -f name
+
+if [ -f name ] && { 
+echo "sucess" 
+echo "sucess again"
+} || {
+echo "failed";
+echo "failed again"; 
+}
+then
+	echo "in if"
+else
+	echo "in else"
+fi
+
+exit 0
