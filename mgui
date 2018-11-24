@@ -1,0 +1,13 @@
+#!/bin/bash
+whiptail --menu "choose an option?" 15 30 4 1 "start server" 2 "exit terminal" 3 "play" 4 "other" 2>_1.txt
+Q_OPTION=$(cat _1.txt); 
+if [ $Q_OPTION == 1 ]; then
+	server
+	whiptail --title "MENU" --msgbox "server will soon be started" 9 18
+else if [ $Q_OPTION == 2 ];then
+	whiptail --title "MENU" --msgbox "server will soon be started" 9 18
+else if [ $Q_OPTION == 3 ];then
+	whiptail --title "MENU" --msgbox "server will soon be started" 9 18
+else if [ $Q_OPTION == 4 ];then
+	whiptail --title "MENU" --msgbox "server will soon be started" 9 18
+fi
