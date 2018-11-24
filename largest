@@ -1,0 +1,18 @@
+#!/bin/sh
+
+maxValue=0;
+maxFile="none"
+
+for file in *$1
+do
+var=$(wc -l < $file)
+if [ "$var" -gt $maxValue ]; then
+ maxValue=$var
+ maxFile=$file
+fi
+done
+
+echo "The largest file seems to be:"
+echo "$maxFile"
+echo "With number of Lines:"
+echo $maxValue
