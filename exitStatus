@@ -1,0 +1,6 @@
+#!/bin/sh
+echo $?
+date  # run date command
+echo $? # print exit status
+foobar123 # not a valid command
+echo $? # print exit status
